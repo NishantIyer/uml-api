@@ -47,7 +47,7 @@ const scanResultSchema = new mongoose.Schema({
   },
   // Intrusion alert fields
   intrusionAlert: {
-    AlertType: {
+    type: {
       type: String,
     },
     BSSID: {
