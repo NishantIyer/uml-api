@@ -1,5 +1,3 @@
-// src/models/ScanResult.js
-
 const mongoose = require('mongoose');
 
 const scanResultSchema = new mongoose.Schema({
@@ -46,6 +44,18 @@ const scanResultSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  // Intrusion alert fields
+  intrusionAlert: {
+    AlertType: {
+      type: String,
+    },
+    BSSID: {
+      type: String,
+    },
+    Timestamp: {
+      type: Number,
+    },
   },
 });
 
