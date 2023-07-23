@@ -27,7 +27,10 @@ app.use(express.json());
 
 // Routes
 const scanResultsRouter = require('./routes/scanResults');
+const intrusionAlertsRouter = require('./routes/intrusionAlerts');
+
 app.use('/api/scanResults', scanResultsRouter);
+app.use('/api/intrusionAlerts', intrusionAlertsRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
