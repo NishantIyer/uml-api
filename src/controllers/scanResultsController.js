@@ -1,30 +1,26 @@
-// src/controllers/scanResultsController.js
+// controllers/scanResultsController.js
 
 const ScanResult = require('../models/scanResult');
 
-// Handler to store scan results
-const storeScanResults = async (req, res, next) => {
+// Store scan results
+exports.storeScanResults = async (req, res, next) => {
   try {
-    const scanResultData = req.body;
-    const scanResult = new ScanResult(scanResultData);
+    const scanResult = new ScanResult(req.body);
     await scanResult.save();
-    res.status(201).json({ message: 'Scan result stored successfully' });
-  } catch (err) {
-    next(err);
+    res.status(201).json(scanResult);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Something went wrong!' });
   }
 };
 
-// Handler to fetch all scan results
-const getAllScanResults = async (req, res, next) => {
+// Fetch all scan results in descending order of createdAt
+exports.getAllScanResults = async (req, res, next) => {
   try {
-    const scanResults = await ScanResult.find().sort({ createdAt: -1 });
-    res.json(scanResults);
-  } catch (err) {
-    next(err);
+    const allScanResults = await ScanResult.find().sort({ createdAt: -1 });
+    res.status(200).json(allScanResults);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Something went wrong!' });
   }
-};
-
-module.exports = {
-  storeScanResults,
-  getAllScanResults,
 };
