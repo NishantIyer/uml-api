@@ -28,9 +28,12 @@ app.use(express.json());
 // Routes
 const scanResultsRouter = require('./routes/scanResults');
 const intrusionAlertsRouter = require('./routes/intrusionAlerts');
+const deleteScanResults = require('./routes/deleteScanResults'); // Import the new delete route
+
 
 app.use('/api/scanResults', scanResultsRouter);
 app.use('/api/intrusionAlerts', intrusionAlertsRouter);
+app.use('/api/deleteScanResults', deleteScanResults); // Endpoint for deleting scan results
 
 // Error handling middleware
 app.use((err, req, res, next) => {
