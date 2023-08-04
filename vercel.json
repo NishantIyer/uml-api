@@ -5,6 +5,11 @@
     {
       "src": "/api/scanResults",
       "dest": "src/app.js"
+    },
+    {
+      "src": "/api/deleteScanResults",
+      "methods": "DELETE",
+      "dest": "src/app.js"
     }
   ]
 }
