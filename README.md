@@ -1,35 +1,57 @@
 # uml-api
 
 api/
+
 |-- src/
+
 |   |-- controllers/
+
 |   |   |-- scanResultsController.js
+
 |   |
 |   |-- models/
+
 |   |   |-- ScanResult.js
+
 |   |
 |   |-- routes/
+
 |   |   |-- scanResults.js
+
 |   |
 |   |-- services/
+
 |   |   |-- scanResultService.js
+
 |   |
 |   |-- utils/
+
 |   |   |-- logger.js
+
 |   |
 |   |-- app.js
+
 |   |-- config/
+
 |   |   |-- db.js
+
 |   |
 |   |-- tests/
+
 |   |   |-- (test files)
+
 |   |
 |   |-- .env
+
 |   |-- .gitignore
+
 |   |-- package.json
+
 |   |-- README.md
+
 |
 |-- (other files and directories)
+
 
 
 Here's the updated file structure for the API to receive data from the ESP32:
